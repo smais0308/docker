@@ -29,11 +29,7 @@ LC_ALL=
 中文已经正常显示
 ![[Pasted image 20220919143556.png]]
 
-
-
-
-
-
+--- 
 - 参考
 [MobaxTerm中文乱码问题解决](https://blog.csdn.net/wswg2009314/article/details/126505920)
 

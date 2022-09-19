@@ -4,13 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "9443387764dac30b",
+        "id": "30fb3e29ae968a59",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "MobaxTerm中文乱码问题.md",
-            "mode": "source"
+            "file": "systemctl命令学习.md",
+            "mode": "source",
+            "source": true
           }
         }
       }
@@ -52,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9978215c6d294102",
@@ -68,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MobaxTerm中文乱码问题.md",
+                "file": "systemctl命令学习.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,9 +88,11 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "9443387764dac30b",
+  "active": "30fb3e29ae968a59",
   "lastOpenFiles": [
     "MobaxTerm中文乱码问题.md",
+    "systemctl命令学习.md",
+    "tree、last、history、sudo、alias命令.md",
     "README.md",
     "将用户添加到sudo列表中.md",
     "初始化git.md",
