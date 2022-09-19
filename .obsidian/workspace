@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -92,6 +92,8 @@
     "将用户添加到sudo列表中.md",
     "初始化git.md",
     "安装额外分支软件包.md",
+    "MobaxTerm中文乱码问题.md",
+    "linux基础知识扫盲.md",
     "软连接和硬连接.md"
   ]
 }
