@@ -1,0 +1,97 @@
+{
+  "main": {
+    "id": "87f1094ef80e2aed",
+    "type": "split",
+    "children": [
+      {
+        "id": "9443387764dac30b",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "874c951791f8d481",
+    "type": "split",
+    "children": [
+      {
+        "id": "43da538456ab2b86",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "80dcdc01951db26e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e2a2f9f9fb6f852c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9978215c6d294102",
+    "type": "split",
+    "children": [
+      {
+        "id": "e6864e2dd5281720",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0266e485701a525f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "9443387764dac30b",
+  "lastOpenFiles": [
+    "README.md",
+    "将用户添加到sudo列表中.md",
+    "初始化git.md",
+    "安装额外分支软件包.md",
+    "软连接和硬连接.md"
+  ]
+}
