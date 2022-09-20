@@ -49,6 +49,11 @@ systemctl status cups.service
  
 #重新设置cups服务开机启动
 systemctl enable cups.service
+
+# Centos 7.x 中取消了iptables, 用firewall取而代之。要关闭防火墙并禁止开机启动服务使用下面的命令
+
+systemctl stop firewalld.service
+systemctl disable firewalld.service
 ```
 
 ### 3. 查看系统上所有服务
@@ -115,11 +120,108 @@ Created symlink from /etc/systemd/system/NetworkManager.service to /dev/null.
 Failed to start NetworkManager.service: Unit is masked.
 ```
 
+- 与开关机相关的其他命令：
+```shell
+#进入睡眠模式
+systemctl suspend
+ 
+#进入休眠模式
+systemctl hibernate
+ 
+#强制进入救援模式
+systemctl rescue
+ 
+#强制进入紧急救援模式
+systemctl emergency
+```
 
+### 5. 设置系统运行级别
+5.1 运行级别对应表
 
+| init级别 | systemctl target |
+|---|---|
+| 0 | shutdown.target|
+| 1 | emergency.target |
+| 2 | rescure.target |
+| 3 | multi-user.target |
+| 4 | 无 |
+| 5 | graphical.target |
+| 6 | 无 |
+此外还是一个getty.target用来设置tty的数量。
+5.2 设置运行级别
+```shell
+#命令格式
+systemctl [command] [unit.target]
+#参数详解：
+command:
+get-default :取得当前的target
+set-default :设置指定的target为默认的运行级别
+isolate :切换到指定的运行级别
+unit.target :为5.1表中列出的运行级别
+```
+| systemctl命令	| 说明 |
+|---|---|
+|systemctl get-default	|获得当前的运行级别|
+|systemctl set-default multi-user.target	|设置默认的运行级别为mulit-user|
+| systemctl isolate multi-user.target	|在不重启的情况下，切换到运行级别mulit-user下|
+|systemctl isolate graphical.target	|在不重启的情况下，切换到图形界面下|
+### 6. 使用systemctl分析各个服务之前的依赖关系
+```shell
+systemctl list-dependencies [unit] [–reverse]
+# –reverse`是用来检查寻哪个unit使用了这个unit
 
+#获得当前运行级别的target
+[root@www ~]# systemctl get-default
+multi-user.target
+ 
+#查看当前运行级别target(mult-user)启动了哪些服务
+[root@www ~]# systemctl list-dependencies
+default.target
+├─abrt-ccpp.service
+├─abrt-oops.service
+├─vsftpd.service
+├─basic.target
+│ ├─alsa-restore.service
+│ ├─alsa-state.service
+.....(中间省略).....
+│ ├─sockets.target
+│ │ ├─avahi-daemon.socket
+│ │ ├─dbus.socket
+.....(中间省略).....
+│ ├─sysinit.target
+│ │ ├─dev-hugepages.mount
+│ │ ├─dev-mqueue.mount
+.....(中间省略).....
+│ └─timers.target
+│   └─systemd-tmpfiles-clean.timer
+├─getty.target
+│ └─getty@tty1.service
+└─remote-fs.target
+ 
+#查看哪些target引用了当前运行级别的target
+[root@www ~]# systemctl list-dependencies --reverse
+default.target
+└─graphical.target
+```
 
+### 7. 关闭网络服务
+在使用systemctl关闭网络服务时有一些特殊 需要同时关闭unit.servce和unit.socket
 
+使用systemctl查看开启的sshd服务
+```bash
+[root@www system]#  systemctl list-units --all | grep sshd
+sshd-keygen.service loaded inactive dead        OpenSSH Server Key Generation
+sshd.service        loaded active   running     OpenSSH server daemon
+sshd.socket         loaded inactive dead        OpenSSH Server Socket
+```
+
+可以看到系统同时开启了 sshd.service 和 sshd.socket , 如果只闭关了 sshd.service 那么 sshd.socket还在监听网络，在网络上有要求连接 sshd 时就会启动 sshd.service 。因此如果想完全关闭sshd服务的话，需要同时停用 sshd.service 和 sshd.socket 。
+
+```bash
+systemctl stop sshd.service
+systemctl stop sshd.socket
+systemctl disable sshd.service sshd.socket
+```
 
 
 
@@ -128,4 +230,5 @@ Failed to start NetworkManager.service: Unit is masked.
 
 
 ---
+参考：
 [CentOS7中systemctl的使用](https://blog.csdn.net/u012486840/article/details/53161574)
