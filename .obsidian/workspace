@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "30fb3e29ae968a59",
+        "id": "5e60005e88603850",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "systemctl命令学习.md",
-            "mode": "preview",
-            "source": true
+            "file": "windows常用命令.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "systemctl命令学习.md",
+                "file": "windows常用命令.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,16 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "30fb3e29ae968a59",
+  "active": "5e60005e88603850",
   "lastOpenFiles": [
-    "MobaxTerm中文乱码问题.md",
+    "win已管理员运行cmd.md",
+    "windows常用命令.md",
+    "CentOS7下Systemctl详解.md",
     "systemctl命令学习.md",
+    "MobaxTerm中文乱码问题.md",
     "tree、last、history、sudo、alias命令.md",
     "README.md",
     "将用户添加到sudo列表中.md",
     "初始化git.md",
-    "安装额外分支软件包.md",
-    "linux基础知识扫盲.md",
-    "软连接和硬连接.md"
+    "安装额外分支软件包.md"
   ]
 }

@@ -2,6 +2,14 @@
 
 
 从CentOS7.X 开始使用systemd服务来代替daemon，原来管理系统启动和管理服务系统服务的相关命令全部由systemctl命令来替代。
+>Unit  
+>表示不同类型的sytemd对象，通过配置文件进行标识和配置，文件中主要包含了系统服务，监听socket、保存的系统快照以及其他与init相关的信息
+>配置文件:  
+>/usr/lib/systemd/system：每个服务最主要的启动脚本设置，类似于之前的/etc/initd.d  
+>/run/system/system：系统执行过程中所产生的服务脚本，比上面的目录优先运行  
+>/etc/system/system：管理员建立的执行脚本，类似于/etc/rc.d/rcN.d/Sxx类的功能，比上面目录优先运行，在三者之中，此目录优先级最高
+>
+
 
 ### 1. 原来的service命令和systemctl命令对比
 
@@ -222,6 +230,7 @@ systemctl stop sshd.service
 systemctl stop sshd.socket
 systemctl disable sshd.service sshd.socket
 ```
+
 
 
 
