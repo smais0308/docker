@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "windows常用命令.md",
+            "file": "centos7 搭建samba服务.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "windows常用命令.md",
+                "file": "centos7 搭建samba服务.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "5e60005e88603850",
   "lastOpenFiles": [
-    "win已管理员运行cmd.md",
+    "普通用户没有权限运行docker程序.md",
     "windows常用命令.md",
+    "win已管理员运行cmd.md",
     "CentOS7下Systemctl详解.md",
     "systemctl命令学习.md",
     "MobaxTerm中文乱码问题.md",
     "tree、last、history、sudo、alias命令.md",
     "README.md",
     "将用户添加到sudo列表中.md",
-    "初始化git.md",
-    "安装额外分支软件包.md"
+    "初始化git.md"
   ]
 }
